@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JoseSCAN Design™ | Data Storytelling & Design IA Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio de François Joseph Kenegue (JoseSCAN Design™), spécialiste en Data Storytelling et Design augmenté par IA. Transformez vos données en récits visuels percutants.">
+  <meta name="keywords" content="Portfolio, Graphiste, Designer, Spécialiste IA, Data Storytelling, Analyse Sémantique, JoseSCAN Design, François Joseph Kenegue, Bit0, Decimal">
+  <meta name="author" content="JoseSCAN Design™ - François Joseph Kenegue">
+
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:title" content="JoseSCAN Design™ | Data Storytelling & Design IA Portfolio">
+  <meta property="og:description" content="Découvrez la fusion du design et de la science des données. Services en Data Storytelling, Graphisme IA et Analyse Sémantique.">
+  <meta property="og:image" content="https://josescan.com/images/josescan.jpg"> 
+  <meta property="og:url" content="https://josescan.com/index.html">
+  <meta property="og:type" content="website">
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "François Joseph Kenegue",
+    "alternateName": "JoseSCAN Design™",
+    "url": "https://josescan.com/index.html",
+    "jobTitle": "Spécialiste en Data Storytelling et Design IA",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "JoseSCAN Design™"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/francois-joseph-kenegue-9b4a27212",
+      "https://www.facebook.com/profile.php?id=61567753603843"
+    ],
+    "knowsAbout": ["Data Storytelling", "Data Visualization", "Graphic Design", "Artificial Intelligence", "Semantic Analysis", "Bit0"],
+    "email": "mailto:josescan8@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montréal",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    }
+  }
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="images/logo.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background: radial-gradient(ellipse at top, #070721, #01010a 80%);
+      color: #e0faff;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    header.scrolled {
+      background: rgba(5, 5, 25, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 255, 255, 0.15);
+    }
+    section {
+      padding: 100px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    .parallax-intro { background-image: url('images/josescan.webp'); }
+    .gradient-text {
+      background: linear-gradient(90deg, #00ffff, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .service-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .service-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .project-card-1 { background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=60'); }
+    .project-card-2 { background-image: url('https://images.unsplash.com/photo-1614726365903-6334237a3a7a?auto=format&fit=crop&w=800&q=60'); }
+    .bit0-card { background: rgba(0, 255, 255, 0.05); border-color: rgba(0, 255, 255, 0.3); }
+    .decimal-card { background: rgba(139, 92, 246, 0.05); border-color: rgba(139, 92, 246, 0.3); }
+  </style>
+</head>
+<body class="bg-[#050519]" data-page-id="index">
+
+  <!-- HEADER -->
+  <header class="flex items-center justify-between px-6 py-4 fixed top-0 left-0 w-full bg-[#050519]/70 backdrop-blur-lg z-50 border-b border-cyan-400/20">
+    <div class="flex items-center gap-3">
+      <a href="index.html"><img src="images/logo.ico" alt="Logo de JoseSCAN Design" class="w-10 h-10 rounded-xl shadow-md" width="40" height="40"></a>
+      <div class="text-2xl font-light text-cyan-400 tracking-wide">JoseSCAN Design™</div>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm text-gray-300">
+      <a href="#projects" class="hover:text-cyan-400 transition">Projets</a>
+      <a href="blog.html" class="hover:text-cyan-400 transition">Blog</a>
+      <a href="apropos.html" class="hover:text-cyan-400 transition">À propos</a>
+      <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+    </nav>
+  </header>
+
+  <!-- INTRO SECTION -->
+  <section id="intro" class="h-screen flex flex-col justify-center items-center text-center parallax parallax-intro">
+    <div class="bg-black/60 p-10 rounded-3xl backdrop-blur-md max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">Graphiste & specialist IA </span></h1>
+      <p class="text-lg md:text-xl text-gray-300 mb-8">Je suis François Joseph Kenegue, fondateur de JoseSCAN Design™. Je traduis la complexité des données en récits clairs et percutants. Mon approche unique fusionne la rigueur de la <strong class="text-cyan-300">science des données</strong> et la créativité du <strong class="text-purple-300">design narratif</strong>.</p>
+      <div class="flex justify-center gap-4">
+        <a href="#services" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-bold shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">Découvrir mes services</a>
+        <a href="contact.html" class="px-8 py-3 bg-transparent border-2 border-gray-400 rounded-full text-gray-300 font-bold hover:bg-gray-700/50 hover:border-gray-300 transition-all duration-300">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUALITY SECTION -->
+  <section id="duality" class="bg-[#080818] text-center">
+    <h2 class="text-4xl font-bold mb-12 gradient-text">Ma Double Expertise : Bit0 & Décimal</h2>
+    <p class="text-gray-400 max-w-3xl mx-auto mb-12">Mon travail repose sur une double compétence : la maîtrise du système sémantique pur <strong class="text-cyan-300">Bit0</strong> pour la structure et la logique, et sa traduction en applications <strong class="text-purple-300">décimales</strong> concrètes et compréhensibles pour le marché.</p>
+    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      <div class="p-8 rounded-2xl shadow-lg border bit0-card">
+        <h3 class="text-2xl font-bold text-cyan-400 mb-4">Système Bit0</h3>
+        <p class="text-gray-400 text-sm">Le monde de la <strong class="font-mono text-cyan-300">logique pure</strong>, de la sémantique et de la structure. C'est ici que naissent les concepts, les relations et l'intégrité des données. C'est le langage de la machine, de la vérité immuable.</p>
+        <ul class="text-left mt-4 space-y-2 text-sm font-mono text-cyan-300/80">
+            <li><span class="text-cyan-400">Φ</span> : Concept Central</li>
+            <li><span class="text-cyan-400">λ</span> : Transition & Transformation</li>
+            <li><span class="text-cyan-400">Ξ</span> : Automatisation & Processus</li>
+        </ul>
+      </div>
+      <div class="p-8 rounded-2xl shadow-lg border decimal-card">
+        <h3 class="text-2xl font-bold text-purple-400 mb-4">Système Décimal</h3>
+        <p class="text-gray-400 text-sm">Le monde de l'<strong class="text-purple-300">expérience humaine</strong>, de la narration et de l'impact. C'est la traduction des concepts Bit0 en stratégies, en designs et en décisions. C'est le langage du marché, de l'émotion et de l'action.</p>
+         <ul class="text-left mt-4 space-y-2 text-sm text-purple-300/80">
+            <li>- Dashboards interactifs</li>
+            <li>- Identités visuelles percutantes</li>
+            <li>- Rapports stratégiques clairs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="bg-[#0b0b1d] text-center">
+    <h2 class="text-4xl font-bold mb-12 gradient-text">Mes Domaines d'Expertise</h2>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="service-card bg-[#111122]/50 p-8 rounded-2xl shadow-lg border border-cyan-500/20 hover:border-cyan-500/50 hover:scale-105 transition-all duration-300">
+        <h3 class="text-xl font-bold text-cyan-400 mb-3">📊 Data Storytelling</h3>
+        <p class="text-gray-400 text-sm">Transformation de données complexes en récits visuels intuitifs. Communication stratégique basée sur la donnée.</p>
+      </div>
+      <div class="service-card bg-[#111122]/50 p-8 rounded-2xl shadow-lg border border-purple-500/20 hover:border-purple-500/50 hover:scale-105 transition-all duration-300">
+        <h3 class="text-xl font-bold text-purple-400 mb-3">🎨 Graphisme IA</h3>
+        <p class="text-gray-400 text-sm">Création d’identités visuelles augmentées par l’IA. Illustrations, interfaces et expériences interactives intelligentes.</p>
+      </div>
+      <div class="service-card bg-[#111122]/50 p-8 rounded-2xl shadow-lg border border-emerald-500/20 hover:border-emerald-500/50 hover:scale-105 transition-all duration-300">
+        <h3 class="text-xl font-bold text-emerald-400 mb-3">🧠 Analyse Sémantique</h3>
+        <p class="text-gray-400 text-sm">Décodage des structures symboliques, exploration de sens cachés et création de modèles cognitifs narratifs.</p>
+      </div>
+    </div>
+    <div class="mt-12">
+      <a href="services.html" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-bold shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300">Voir tous les services</a>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="bg-[#080818]">
+    <div class="bg-black/60 p-10 rounded-3xl max-w-6xl mx-auto backdrop-blur-md">
+      <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Projets Sélectionnés</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <a href="project.html" class="project-card-1 block bg-cover bg-center rounded-2xl shadow-lg border border-cyan-500/30 overflow-hidden group h-80">
+          <div class="p-6 bg-black/70 h-full flex flex-col justify-end group-hover:bg-black/80 transition-all duration-300">
+            <h3 class="text-2xl text-cyan-400 mb-2">🔬 Analyse Sémantique du Data Scientist</h3>
+            <p class="text-sm text-gray-400 mb-3">Fusion analytique et design narratif pour révéler le rôle hybride du Data Storytelling dans l’écosystème numérique.</p>
+            <span class="text-cyan-300 font-semibold text-sm group-hover:underline">Voir l'étude de cas →</span>
+          </div>
+        </a>
+        <a href="technologie.html" class="project-card-2 block bg-cover bg-center rounded-2xl shadow-lg border border-purple-500/30 overflow-hidden group h-80">
+          <div class="p-6 bg-black/70 h-full flex flex-col justify-end group-hover:bg-black/80 transition-all duration-300">
+            <h3 class="text-2xl text-purple-400 mb-2">🪐 Outils et Interfaces LMBZ</h3>
+            <p class="text-sm text-gray-400 mb-3">Outils d'exploration artistique et fonctionnelle avec la logique LMBZ dans un environnement fractal et audiovisuel Bit0.</p>
+            <span class="text-purple-300 font-semibold text-sm group-hover:underline">Découvrir la technologie →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="bg-[#0b0b1d] text-center">
+    <h2 class="text-3xl font-bold gradient-text mb-4">Prêt à donner un sens à vos données ?</h2>
+    <p class="text-gray-400 max-w-xl mx-auto mb-8">Que vous ayez un projet clair ou une simple idée, discutons-en. Mon approche sur-mesure s'adapte à vos besoins, de l'analyse exploratoire au déploiement de solutions complètes.</p>
+    <a href="contact.html" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-full text-white font-bold shadow-lg hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300">Initier la conversation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#050515] text-gray-400 py-12 px-6 border-t border-cyan-400/20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h4 class="text-lg font-bold text-cyan-400 mb-3">JoseSCAN Design™</h4>
+        <p class="text-sm">Fusion du design et de la science des données pour créer des récits visuels percutants.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold text-cyan-400 mb-3">Navigation</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="#services" class="hover:text-cyan-300 transition">Services</a>
+          <a href="#projects" class="hover:text-cyan-300 transition">Projets</a>
+          <a href="blog.html" class="hover:text-cyan-300 transition">Blog</a>
+          <a href="apropos.html" class="hover:text-cyan-300 transition">À propos</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold text-cyan-400 mb-3">Contact</h4>
+        <div class="flex justify-center md:justify-start gap-4">
+          <a href="mailto:josescan8@gmail.com" title="Envoyer un email à JoseSCAN Design" class="transition hover:scale-110"><img src="images/email.ico" alt="Email" class="w-8 h-8" width="32" height="32" loading="lazy" decoding="async"></a>
+          <a href="https://www.linkedin.com/in/francois-joseph-kenegue-9b4a27212" target="_blank" title="Profil LinkedIn de JoseSCAN Design" class="transition hover:scale-110"><img src="images/linkedin.ico" alt="LinkedIn" class="w-8 h-8" width="32" height="32" loading="lazy" decoding="async"></a>
+          <a href="https://www.facebook.com/profile.php?id=61567753603843" target="_blank" title="Page Facebook de JoseSCAN Design" class="transition hover:scale-110"><img src="images/facebook.ico" alt="Facebook" class="w-8 h-8" width="32" height="32" loading="lazy" decoding="async"></a>
+          <a href="https://wa.me/15145578257" target="_blank" title="Contacter JoseSCAN Design sur WhatsApp" class="transition hover:scale-110"><img src="images/whatsapp.ico" alt="WhatsApp" class="w-8 h-8" width="32" height="32" loading="lazy" decoding="async"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-sm mt-10 pt-6 border-t border-cyan-400/10">
+      <p class="mb-2">© 2025 JoseSCAN Design™. Tous droits réservés.</p>
+      <a href="mentions-legales.html" class="text-gray-500 hover:text-cyan-300 transition">Mentions Légales</a>
+    </div>
+  </footer>
+
+  <!-- Insertion du Chatbot global -->
+  <div id="chatbot-container" role="complementary" aria-label="Chatbot Assistant"></div>
+  <script>
+  fetch("includes/lmbz.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("chatbot-container").innerHTML = html;
+    });
+
+  // Intersection Observer for service card animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card').forEach(card => {
+    observer.observe(card);
+  });
+  </script>
+
+</body>
+</html>

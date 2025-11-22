@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | JoseSCAN Design™</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Blog et actualités de JoseSCAN Design™. Analyses et réflexions sur la fusion du design, de la donnée et de la sémantique.">
+  <meta name="keywords" content="Blog, Actualités, Data Storytelling, Design IA, Sémantique Vibratoire, Data Science, Technologie">
+  <meta name="author" content="JoseSCAN Design™ - François Joseph Kenegue">
+
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:title" content="Blog | JoseSCAN Design™">
+  <meta property="og:description" content="Explorations, analyses et réflexions sur la fusion du design, de la donnée et de la sémantique.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1950&q=80">
+  <meta property="og:url" content="https://josescan.com/blog.html">
+
+  <link rel="icon" href="images/logo.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      font-family: "Inter", sans-serif;
+      background: radial-gradient(ellipse at top, #0a0a1a, #000);
+      color: #e0faff;
+      overflow-x:hidden;
+    }
+    .hero {
+      padding-top: 100px;
+      height: 50vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1950&q=80') center/cover fixed;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color:#00ffff;
+      text-shadow:0 0 20px #00ffffaa;
+    }
+    .hero p {
+      margin-top:15px;
+      font-size:1.1rem;
+      color:#fff;
+      opacity:0.85;
+      max-width:700px;
+    }
+
+    main {
+      padding: 90px 0%;
+      background:rgba(10,10,25,0.8);
+      border-top:1px solid #838f8f1f;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .post-card {
+      background: #0b0b1c;
+      border: 1px solid #00ffff44;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 20px rgba(0,255,255,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px #00ffff44;
+    }
+    .post-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #00ffff99;
+      margin-bottom: 10px;
+    }
+    .post-category {
+      background: rgba(0,255,255,0.1);
+      color: #00ffaa;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+    .post-card h2 {
+      color: #00ffaa;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .post-card p {
+      color: #cceeff;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #00ffff, #00ffaa);
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      align-self: flex-start;
+    }
+
+    /* ======== LMBZ Chatbot Styles ======== */
+    #lmbz-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      font-family: "Inter", sans-serif;
+    }
+    #lmbz-bubble {
+      background: radial-gradient(circle, #00ffff, #004477);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px #00ffff88;
+      cursor: pointer;
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 20px #00ffff44; }
+      50% { box-shadow: 0 0 40px #00ffffaa; }
+    }
+    .lmbz-logo { width: 48px; height: 48px; border-radius: 50%; }
+
+    #lmbz-window {
+      display: none;
+      flex-direction: column;
+      width: 340px;
+      height: 450px;
+      background: rgba(10, 15, 30, 0.97);
+      border: 1px solid #00ffffaa;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #00ffff66;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+    #lmbz-header {
+      background: linear-gradient(90deg, #00ffffaa, #0077ffcc);
+      color: #000;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      position: relative;
+    }
+    #lmbz-header select {
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      background: #000;
+      color: #00ffff;
+      border: 1px solid #00ffff88;
+      border-radius: 5px;
+      padding: 2px 5px;
+    }
+    #lmbz-header span {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      cursor: pointer;
+      color: #000;
+    }
+    #lmbz-messages { flex: 1; overflow-y: auto; padding: 10px; color: #e0faff; font-size: 14px; }
+    .lmbz-msg { margin: 10px 0; line-height: 1.4; }
+    .user { text-align: right; color: #00ff99; }
+    .lmbz { text-align: left; color: #00ffff; }
+    #lmbz-input-area { display: flex; border-top: 1px solid #00ffff44; background: #111; }
+    #lmbz-input { flex: 1; padding: 8px; border: none; background: transparent; color: #00ffff; outline: none; }
+    #lmbz-send { background: #00ffff; border: none; color: #000; padding: 8px 15px; cursor: pointer; font-weight: bold; }
+    #lmbz-send:hover { background: #00ffaa; }
+  </style>
+</head>
+<body class="bg-slate-900 text-gray-300 font-sans" data-page-id="blog">
+
+  <!-- HEADER -->
+  <header class="flex items-center justify-between px-6 py-4 fixed top-0 left-0 w-full bg-slate-900/70 backdrop-blur-lg z-50 border-b border-cyan-400/20">
+    <div class="flex items-center gap-3">
+      <a href="index.html"><img src="images/logo.ico" alt="Logo JoseSCAN Design" class="w-10 h-10 rounded-xl shadow-md" width="40" height="40"></a>
+      <div class="text-2xl font-light text-cyan-400 tracking-wide">JoseSCAN Design™</div>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm text-gray-300">
+      <a href="services.html" class="hover:text-cyan-400 transition">Services</a>
+      <a href="index.html#projects" class="hover:text-cyan-400 transition">Projets</a>
+      <a href="blog.html" class="hover:text-cyan-400 transition">Blog</a>
+      <a href="apropos.html" class="hover:text-cyan-400 transition">À propos</a>
+      <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+    </nav>
+  </header>
+
+  <main class="pt-24">
+    <!-- HERO SECTION -->
+    <section class="text-center py-20 px-4 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1950&q=80')">
+        <div class="bg-slate-900/60 backdrop-blur-sm py-12 px-6 rounded-xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold gradient-text mb-4">Blog & Actualités</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Explorations, analyses et réflexions sur la fusion du design, de la donnée et de la sémantique.</p>
+        </div>
+    </section>
+
+    <!-- BLOG GRID -->
+    <section class="py-20 px-4 bg-slate-800/50">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Article 1 -->
+          <article class="bg-slate-800 rounded-2xl shadow-lg overflow-hidden border border-slate-700 hover:border-cyan-400/50 hover:scale-105 transition-all group">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=60" alt="Circuits imprimés et code informatique représentant la Data Science" class="w-full h-48 object-cover">
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center text-sm text-gray-400 mb-2">
+                <span class="bg-cyan-400/10 text-cyan-300 px-3 py-1 rounded-full text-xs font-semibold">Data Science</span>
+                <span>15 Juillet 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-200 group-hover:text-cyan-300 transition mb-3">Le Rôle du Data Storytelling en 2024</h2>
+              <p class="text-gray-400 text-sm flex-grow">Au-delà des graphiques, comment la narration transforme-t-elle des données brutes en décisions stratégiques ? Une plongée dans les techniques et les enjeux actuels...</p>
+              <a href="#" class="mt-4 self-start text-cyan-400 font-semibold group-hover:underline">Lire la suite →</a>
+            </div>
+          </article>
+    
+          <!-- Article 2 -->
+          <article class="bg-slate-800 rounded-2xl shadow-lg overflow-hidden border border-slate-700 hover:border-purple-400/50 hover:scale-105 transition-all group">
+            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=60" alt="Code source sur un écran d'ordinateur portable">
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center text-sm text-gray-400 mb-2">
+                <span class="bg-purple-400/10 text-purple-300 px-3 py-1 rounded-full text-xs font-semibold">Technologie</span>
+                <span>02 Juillet 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-200 group-hover:text-purple-300 transition mb-3">Introduction à la Sémantique Bit0</h2>
+              <p class="text-gray-400 text-sm flex-grow">Notre modèle Bit0 n'est pas qu'un outil, c'est une philosophie. Découvrez comment nous attribuons une fréquence aux concepts et ce que cela révèle...</p>
+              <a href="#" class="mt-4 self-start text-purple-400 font-semibold group-hover:underline">Lire la suite →</a>
+            </div>
+          </article>
+    
+          <!-- Article 3 -->
+          <article class="bg-slate-800 rounded-2xl shadow-lg overflow-hidden border border-slate-700 hover:border-emerald-400/50 hover:scale-105 transition-all group">
+            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=60" alt="Interface de design graphique sur un écran">
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="flex justify-between items-center text-sm text-gray-400 mb-2">
+                <span class="bg-emerald-400/10 text-emerald-300 px-3 py-1 rounded-full text-xs font-semibold">Design IA</span>
+                <span>21 Juin 2024</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-200 group-hover:text-emerald-300 transition mb-3">Le Design Augmenté par l'IA : Mythes et Réalités</h2>
+              <p class="text-gray-400 text-sm flex-grow">L'intelligence artificielle est-elle une menace ou le plus grand allié du designer ? Retour sur notre approche et nos outils pour une créativité décuplée.</p>
+              <a href="#" class="mt-4 self-start text-emerald-400 font-semibold group-hover:underline">Lire la suite →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-gray-400 py-12 px-6 border-t border-cyan-400/20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+      <div>
+        <h4 class="text-lg font-bold text-cyan-400 mb-3">JoseSCAN Design™</h4>
+        <p class="text-sm">Fusion du design et de la science des données pour créer des récits visuels percutants.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold text-cyan-400 mb-3">Navigation</h4>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="services.html" class="hover:text-cyan-300 transition">Services</a>
+          <a href="index.html#projects" class="hover:text-cyan-300 transition">Projets</a>
+          <a href="blog.html" class="hover:text-cyan-300 transition">Blog</a>
+          <a href="apropos.html" class="hover:text-cyan-300 transition">À propos</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold text-cyan-400 mb-3">Contact</h4>
+        <div class="flex justify-center md:justify-start gap-4">
+          <a href="mailto:josescan8@gmail.com" title="Email" class="transition hover:scale-110"><img src="images/email.ico" alt="Email" class="w-8 h-8"></a>
+          <a href="https://www.linkedin.com/in/francois-joseph-kenegue-9b4a27212" target="_blank" title="LinkedIn" class="transition hover:scale-110"><img src="images/linkedin.ico" alt="LinkedIn" class="w-8 h-8"></a>
+          <a href="https://www.facebook.com/profile.php?id=61567753603843" target="_blank" title="Facebook" class="transition hover:scale-110"><img src="images/facebook.ico" alt="Facebook" class="w-8 h-8"></a>
+          <a href="https://wa.me/15145578257" target="_blank" title="WhatsApp" class="transition hover:scale-110"><img src="images/whatsapp.ico" alt="WhatsApp" class="w-8 h-8"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-sm mt-10 pt-6 border-t border-cyan-400/10">
+      <p class="mb-2">© 2025 JoseSCAN Design™. Tous droits réservés.</p>
+      <a href="mentions-legales.html" class="text-gray-500 hover:text-cyan-300 transition">Mentions Légales</a>
+    </div>
+  </footer>
+
+  <!-- Insertion du Chatbot global -->
+  <div id="chatbot-container"></div>
+  <script>
+  fetch("includes/lmbz.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("chatbot-container").innerHTML = html;
+    });
+  </script>
+
+</body>
+</html>
